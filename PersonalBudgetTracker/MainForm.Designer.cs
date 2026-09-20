@@ -30,13 +30,17 @@
         {
             lblTitle = new Label();
             grpIncome = new GroupBox();
-            lblIncomeDescription = new Label();
-            txtIncomeDescription = new TextBox();
-            lblIncomeAmount = new Label();
-            numIncomeAmount = new NumericUpDown();
             btnAddIncome = new Button();
+            numIncomeAmount = new NumericUpDown();
+            lblIncomeAmount = new Label();
+            txtIncomeDescription = new TextBox();
+            lblIncomeDescription = new Label();
+            grpIncomeSummary = new GroupBox();
+            lblTotalIncome = new Label();
+            lstIncomeEntries = new ListBox();
             grpIncome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numIncomeAmount).BeginInit();
+            grpIncomeSummary.SuspendLayout();
             SuspendLayout();
             // 
             // lblTitle
@@ -58,44 +62,10 @@
             grpIncome.Controls.Add(lblIncomeDescription);
             grpIncome.Location = new Point(24, 76);
             grpIncome.Name = "grpIncome";
-            grpIncome.Size = new Size(300, 223);
+            grpIncome.Size = new Size(363, 223);
             grpIncome.TabIndex = 1;
             grpIncome.TabStop = false;
             grpIncome.Text = "Add Income";
-            // 
-            // lblIncomeDescription
-            // 
-            lblIncomeDescription.AutoSize = true;
-            lblIncomeDescription.Location = new Point(6, 27);
-            lblIncomeDescription.Name = "lblIncomeDescription";
-            lblIncomeDescription.Size = new Size(106, 25);
-            lblIncomeDescription.TabIndex = 2;
-            lblIncomeDescription.Text = "Description:";
-            // 
-            // txtIncomeDescription
-            // 
-            txtIncomeDescription.Location = new Point(6, 55);
-            txtIncomeDescription.Name = "txtIncomeDescription";
-            txtIncomeDescription.Size = new Size(249, 31);
-            txtIncomeDescription.TabIndex = 2;
-            // 
-            // lblIncomeAmount
-            // 
-            lblIncomeAmount.AutoSize = true;
-            lblIncomeAmount.Location = new Point(6, 89);
-            lblIncomeAmount.Name = "lblIncomeAmount";
-            lblIncomeAmount.Size = new Size(106, 25);
-            lblIncomeAmount.TabIndex = 2;
-            lblIncomeAmount.Text = "Amount ($):";
-            // 
-            // numIncomeAmount
-            // 
-            numIncomeAmount.DecimalPlaces = 2;
-            numIncomeAmount.Location = new Point(6, 117);
-            numIncomeAmount.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-            numIncomeAmount.Name = "numIncomeAmount";
-            numIncomeAmount.Size = new Size(180, 31);
-            numIncomeAmount.TabIndex = 3;
             // 
             // btnAddIncome
             // 
@@ -107,11 +77,75 @@
             btnAddIncome.UseVisualStyleBackColor = true;
             btnAddIncome.Click += btnAddIncome_Click;
             // 
+            // numIncomeAmount
+            // 
+            numIncomeAmount.DecimalPlaces = 2;
+            numIncomeAmount.Location = new Point(6, 117);
+            numIncomeAmount.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            numIncomeAmount.Name = "numIncomeAmount";
+            numIncomeAmount.Size = new Size(180, 31);
+            numIncomeAmount.TabIndex = 3;
+            // 
+            // lblIncomeAmount
+            // 
+            lblIncomeAmount.AutoSize = true;
+            lblIncomeAmount.Location = new Point(12, 89);
+            lblIncomeAmount.Name = "lblIncomeAmount";
+            lblIncomeAmount.Size = new Size(106, 25);
+            lblIncomeAmount.TabIndex = 2;
+            lblIncomeAmount.Text = "Amount ($):";
+            lblIncomeAmount.Click += lblIncomeAmount_Click;
+            // 
+            // txtIncomeDescription
+            // 
+            txtIncomeDescription.Location = new Point(6, 55);
+            txtIncomeDescription.Name = "txtIncomeDescription";
+            txtIncomeDescription.Size = new Size(249, 31);
+            txtIncomeDescription.TabIndex = 2;
+            // 
+            // lblIncomeDescription
+            // 
+            lblIncomeDescription.AutoSize = true;
+            lblIncomeDescription.Location = new Point(6, 27);
+            lblIncomeDescription.Name = "lblIncomeDescription";
+            lblIncomeDescription.Size = new Size(106, 25);
+            lblIncomeDescription.TabIndex = 2;
+            lblIncomeDescription.Text = "Description:";
+            // 
+            // grpIncomeSummary
+            // 
+            grpIncomeSummary.Controls.Add(lblTotalIncome);
+            grpIncomeSummary.Controls.Add(lstIncomeEntries);
+            grpIncomeSummary.Location = new Point(447, 76);
+            grpIncomeSummary.Name = "grpIncomeSummary";
+            grpIncomeSummary.Size = new Size(419, 223);
+            grpIncomeSummary.TabIndex = 2;
+            grpIncomeSummary.TabStop = false;
+            grpIncomeSummary.Text = "Income Summary";
+            // 
+            // lblTotalIncome
+            // 
+            lblTotalIncome.AutoSize = true;
+            lblTotalIncome.Location = new Point(6, 187);
+            lblTotalIncome.Name = "lblTotalIncome";
+            lblTotalIncome.Size = new Size(166, 25);
+            lblTotalIncome.TabIndex = 1;
+            lblTotalIncome.Text = "Total Income: $0.00";
+            // 
+            // lstIncomeEntries
+            // 
+            lstIncomeEntries.FormattingEnabled = true;
+            lstIncomeEntries.Location = new Point(6, 30);
+            lstIncomeEntries.Name = "lstIncomeEntries";
+            lstIncomeEntries.Size = new Size(274, 154);
+            lstIncomeEntries.TabIndex = 0;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(878, 544);
+            Controls.Add(grpIncomeSummary);
             Controls.Add(grpIncome);
             Controls.Add(lblTitle);
             Name = "MainForm";
@@ -120,6 +154,8 @@
             grpIncome.ResumeLayout(false);
             grpIncome.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numIncomeAmount).EndInit();
+            grpIncomeSummary.ResumeLayout(false);
+            grpIncomeSummary.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -133,5 +169,8 @@
         private Label lblIncomeAmount;
         private NumericUpDown numIncomeAmount;
         private Button btnAddIncome;
+        private GroupBox grpIncomeSummary;
+        private ListBox lstIncomeEntries;
+        private Label lblTotalIncome;
     }
 }
