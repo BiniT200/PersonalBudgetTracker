@@ -54,5 +54,15 @@ namespace PersonalBudgetTracker
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbExpenseCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

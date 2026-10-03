@@ -38,9 +38,19 @@
             grpIncomeSummary = new GroupBox();
             lblTotalIncome = new Label();
             lstIncomeEntries = new ListBox();
+            grpExpense = new GroupBox();
+            label1 = new Label();
+            txtExpenseDescription = new TextBox();
+            label2 = new Label();
+            numExpenseAmount = new NumericUpDown();
+            label3 = new Label();
+            cmbExpenseCategory = new ComboBox();
+            btnAddExpense = new Button();
             grpIncome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numIncomeAmount).BeginInit();
             grpIncomeSummary.SuspendLayout();
+            grpExpense.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numExpenseAmount).BeginInit();
             SuspendLayout();
             // 
             // lblTitle
@@ -140,11 +150,91 @@
             lstIncomeEntries.Size = new Size(274, 154);
             lstIncomeEntries.TabIndex = 0;
             // 
+            // grpExpense
+            // 
+            grpExpense.Controls.Add(btnAddExpense);
+            grpExpense.Controls.Add(cmbExpenseCategory);
+            grpExpense.Controls.Add(label3);
+            grpExpense.Controls.Add(numExpenseAmount);
+            grpExpense.Controls.Add(label2);
+            grpExpense.Controls.Add(txtExpenseDescription);
+            grpExpense.Controls.Add(label1);
+            grpExpense.Location = new Point(24, 326);
+            grpExpense.Name = "grpExpense";
+            grpExpense.Size = new Size(363, 394);
+            grpExpense.TabIndex = 3;
+            grpExpense.TabStop = false;
+            grpExpense.Text = "Add Expense";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 43);
+            label1.Name = "label1";
+            label1.Size = new Size(106, 25);
+            label1.TabIndex = 0;
+            label1.Text = "Description:";
+            label1.Click += label1_Click;
+            // 
+            // txtExpenseDescription
+            // 
+            txtExpenseDescription.Location = new Point(6, 71);
+            txtExpenseDescription.Name = "txtExpenseDescription";
+            txtExpenseDescription.Size = new Size(249, 31);
+            txtExpenseDescription.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(6, 118);
+            label2.Name = "label2";
+            label2.Size = new Size(106, 25);
+            label2.TabIndex = 2;
+            label2.Text = "Amount ($):";
+            // 
+            // numExpenseAmount
+            // 
+            numExpenseAmount.DecimalPlaces = 2;
+            numExpenseAmount.Location = new Point(12, 146);
+            numExpenseAmount.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            numExpenseAmount.Name = "numExpenseAmount";
+            numExpenseAmount.Size = new Size(180, 31);
+            numExpenseAmount.TabIndex = 3;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 180);
+            label3.Name = "label3";
+            label3.Size = new Size(88, 25);
+            label3.TabIndex = 4;
+            label3.Text = "Category:";
+            // 
+            // cmbExpenseCategory
+            // 
+            cmbExpenseCategory.FormattingEnabled = true;
+            cmbExpenseCategory.Items.AddRange(new object[] { "Rent", "", "Groceries", "", "Transport", "", "Family Support", "", "Entertainment", "", "Other" });
+            cmbExpenseCategory.Location = new Point(12, 208);
+            cmbExpenseCategory.Name = "cmbExpenseCategory";
+            cmbExpenseCategory.Size = new Size(182, 33);
+            cmbExpenseCategory.TabIndex = 5;
+            cmbExpenseCategory.SelectedIndexChanged += cmbExpenseCategory_SelectedIndexChanged;
+            // 
+            // btnAddExpense
+            // 
+            btnAddExpense.Location = new Point(12, 247);
+            btnAddExpense.Name = "btnAddExpense";
+            btnAddExpense.Size = new Size(133, 34);
+            btnAddExpense.TabIndex = 6;
+            btnAddExpense.Text = "Add Expense";
+            btnAddExpense.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(878, 544);
+            ClientSize = new Size(878, 714);
+            Controls.Add(grpExpense);
             Controls.Add(grpIncomeSummary);
             Controls.Add(grpIncome);
             Controls.Add(lblTitle);
@@ -156,6 +246,9 @@
             ((System.ComponentModel.ISupportInitialize)numIncomeAmount).EndInit();
             grpIncomeSummary.ResumeLayout(false);
             grpIncomeSummary.PerformLayout();
+            grpExpense.ResumeLayout(false);
+            grpExpense.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numExpenseAmount).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -172,5 +265,13 @@
         private GroupBox grpIncomeSummary;
         private ListBox lstIncomeEntries;
         private Label lblTotalIncome;
+        private GroupBox grpExpense;
+        private Label label1;
+        private TextBox txtExpenseDescription;
+        private Label label2;
+        private Label label3;
+        private NumericUpDown numExpenseAmount;
+        private ComboBox cmbExpenseCategory;
+        private Button btnAddExpense;
     }
 }
