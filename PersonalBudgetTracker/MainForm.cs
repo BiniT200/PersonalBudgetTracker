@@ -36,8 +36,8 @@ namespace PersonalBudgetTracker
             };
 
             incomeEntries.Add(newIncome);
-            lstIncomeEntries.Items.Add(
-    $"{newIncome.Date:dd/MM/yyyy} - {newIncome.Description} - {newIncome.Amount:C}"
+            transactions.Add(newIncome);
+            lstIncomeEntries.Items.Add(newIncome.GetSummary()
 );
 
             totalIncome += newIncome.Amount;

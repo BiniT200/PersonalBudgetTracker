@@ -39,13 +39,13 @@
             lblTotalIncome = new Label();
             lstIncomeEntries = new ListBox();
             grpExpense = new GroupBox();
-            label1 = new Label();
-            txtExpenseDescription = new TextBox();
-            label2 = new Label();
-            numExpenseAmount = new NumericUpDown();
-            label3 = new Label();
-            cmbExpenseCategory = new ComboBox();
             btnAddExpense = new Button();
+            cmbExpenseCategory = new ComboBox();
+            label3 = new Label();
+            numExpenseAmount = new NumericUpDown();
+            label2 = new Label();
+            txtExpenseDescription = new TextBox();
+            label1 = new Label();
             grpIncome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numIncomeAmount).BeginInit();
             grpIncomeSummary.SuspendLayout();
@@ -128,7 +128,7 @@
             grpIncomeSummary.Controls.Add(lstIncomeEntries);
             grpIncomeSummary.Location = new Point(447, 76);
             grpIncomeSummary.Name = "grpIncomeSummary";
-            grpIncomeSummary.Size = new Size(419, 223);
+            grpIncomeSummary.Size = new Size(589, 318);
             grpIncomeSummary.TabIndex = 2;
             grpIncomeSummary.TabStop = false;
             grpIncomeSummary.Text = "Income Summary";
@@ -147,7 +147,7 @@
             lstIncomeEntries.FormattingEnabled = true;
             lstIncomeEntries.Location = new Point(6, 30);
             lstIncomeEntries.Name = "lstIncomeEntries";
-            lstIncomeEntries.Size = new Size(274, 154);
+            lstIncomeEntries.Size = new Size(538, 154);
             lstIncomeEntries.TabIndex = 0;
             // 
             // grpExpense
@@ -166,49 +166,15 @@
             grpExpense.TabStop = false;
             grpExpense.Text = "Add Expense";
             // 
-            // label1
+            // btnAddExpense
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 43);
-            label1.Name = "label1";
-            label1.Size = new Size(106, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Description:";
-            label1.Click += label1_Click;
-            // 
-            // txtExpenseDescription
-            // 
-            txtExpenseDescription.Location = new Point(6, 71);
-            txtExpenseDescription.Name = "txtExpenseDescription";
-            txtExpenseDescription.Size = new Size(249, 31);
-            txtExpenseDescription.TabIndex = 1;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(6, 118);
-            label2.Name = "label2";
-            label2.Size = new Size(106, 25);
-            label2.TabIndex = 2;
-            label2.Text = "Amount ($):";
-            // 
-            // numExpenseAmount
-            // 
-            numExpenseAmount.DecimalPlaces = 2;
-            numExpenseAmount.Location = new Point(12, 146);
-            numExpenseAmount.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-            numExpenseAmount.Name = "numExpenseAmount";
-            numExpenseAmount.Size = new Size(180, 31);
-            numExpenseAmount.TabIndex = 3;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(12, 180);
-            label3.Name = "label3";
-            label3.Size = new Size(88, 25);
-            label3.TabIndex = 4;
-            label3.Text = "Category:";
+            btnAddExpense.Location = new Point(12, 247);
+            btnAddExpense.Name = "btnAddExpense";
+            btnAddExpense.Size = new Size(133, 34);
+            btnAddExpense.TabIndex = 6;
+            btnAddExpense.Text = "Add Expense";
+            btnAddExpense.UseVisualStyleBackColor = true;
+            btnAddExpense.Click += btnAddExpense_Click;
             // 
             // cmbExpenseCategory
             // 
@@ -220,21 +186,55 @@
             cmbExpenseCategory.TabIndex = 5;
             cmbExpenseCategory.SelectedIndexChanged += cmbExpenseCategory_SelectedIndexChanged;
             // 
-            // btnAddExpense
+            // label3
             // 
-            btnAddExpense.Location = new Point(12, 247);
-            btnAddExpense.Name = "btnAddExpense";
-            btnAddExpense.Size = new Size(133, 34);
-            btnAddExpense.TabIndex = 6;
-            btnAddExpense.Text = "Add Expense";
-            btnAddExpense.UseVisualStyleBackColor = true;
-            btnAddExpense.Click += btnAddExpense_Click;
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 180);
+            label3.Name = "label3";
+            label3.Size = new Size(88, 25);
+            label3.TabIndex = 4;
+            label3.Text = "Category:";
+            // 
+            // numExpenseAmount
+            // 
+            numExpenseAmount.DecimalPlaces = 2;
+            numExpenseAmount.Location = new Point(12, 146);
+            numExpenseAmount.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            numExpenseAmount.Name = "numExpenseAmount";
+            numExpenseAmount.Size = new Size(180, 31);
+            numExpenseAmount.TabIndex = 3;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(6, 118);
+            label2.Name = "label2";
+            label2.Size = new Size(106, 25);
+            label2.TabIndex = 2;
+            label2.Text = "Amount ($):";
+            // 
+            // txtExpenseDescription
+            // 
+            txtExpenseDescription.Location = new Point(6, 71);
+            txtExpenseDescription.Name = "txtExpenseDescription";
+            txtExpenseDescription.Size = new Size(249, 31);
+            txtExpenseDescription.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 43);
+            label1.Name = "label1";
+            label1.Size = new Size(106, 25);
+            label1.TabIndex = 0;
+            label1.Text = "Description:";
+            label1.Click += label1_Click;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(878, 714);
+            ClientSize = new Size(1181, 714);
             Controls.Add(grpExpense);
             Controls.Add(grpIncomeSummary);
             Controls.Add(grpIncome);
