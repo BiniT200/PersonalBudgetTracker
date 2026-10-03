@@ -228,6 +228,7 @@
             btnAddExpense.TabIndex = 6;
             btnAddExpense.Text = "Add Expense";
             btnAddExpense.UseVisualStyleBackColor = true;
+            btnAddExpense.Click += btnAddExpense_Click;
             // 
             // MainForm
             // 
