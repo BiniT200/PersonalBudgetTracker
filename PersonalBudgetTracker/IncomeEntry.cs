@@ -4,10 +4,11 @@ using System.Text;
 
 namespace PersonalBudgetTracker
 {
-    public class IncomeEntry
+    public class IncomeEntry : Transaction
     {
-        public string Description { get; set; } = "";
-        public decimal Amount { get; set; }
-        public DateTime Date { get; set; }
+        public override string GetSummary()
+        {
+            return $"{Date:dd/MM/yyyy} - Income - {Description} - {Amount:C}";
+        }
     }
 }
